@@ -14,24 +14,24 @@
     </div>
     <div class="container" id="container">
         <div class="form-container sign-up">
-            <form>
+            <form id="formCadastrar">
                 <h1>Cadastro</h1>
                 <span>Informe seus dados para criar seu cadastro.</span>
-                <input type="text" placeholder="Razão Social">
-                <input type="text" placeholder="CNPJ">
-                <input type="email" placeholder="Email">
-                <input type="password" placeholder="Senha">
-                <button>Cadastrar</button>
+                <input type="text" placeholder="Razão Social" id="razaoSocialCadastro">
+                <input type="text" placeholder="CNPJ" id="cnpjCadastro">
+                <input type="email" placeholder="Email" id="emailCadastro">
+                <input type="password" placeholder="Senha" id="senhaCadastro">
+                <button type="submit" onclick="criarConta()">Cadastrar</button>
             </form>
         </div>
         <div class="form-container sign-in">
-            <form>
+            <form id="formEntrar">
                 <h1>Entrar</h1>
-                <span>Utilise dados para acessar.</span>
-                <input type="text" placeholder="Razão Social">
-                <input type="email" placeholder="Email">
-                <input type="password" placeholder="Senha">
-                <a href="/Front/Home/home.html">Entrar</a>
+                <span>Utilize dados para acessar.</span>
+                <input type="text" placeholder="Razão Social" id="razaoSocialEntrar">
+                <input type="email" placeholder="Email" id="emailEntrar">
+                <input type="password" placeholder="Senha" id="senhaEntrar">
+                <button type="submit">Entrar</button>
             </form>
         </div>
 
@@ -40,17 +40,17 @@
                 <div class="toggle-panel toggle-left">
                     <h1>Bem-vindo de volta!</h1>
                     <p>Insira seus dados pessoais para usar todos os recursos do site</p>
-                    <button class="hidden" id="login">Entrar</button>
+                    <button id="login">Entrar</button>
                 </div>
                 <div class="toggle-panel toggle-right">
                     <h1>Olá, Seja bem-vindo!</h1>
                     <p>Registre-se com seus dados pessoais para usar todas as funcionalidades do site</p>
-                    <button class="hidden" id="register">Cadastrar</button>
+                    <button id="register">Cadastrar</button>
                 </div>
             </div>
         </div>
     </div>
 
-    <script src="/Front/Login-Cadastro/main.js"></script>
+    <script src="./Login-Cadastro/main.js"></script>
 </body>
 </html>
