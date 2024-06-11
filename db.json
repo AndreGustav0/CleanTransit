@@ -1,0 +1,18 @@
+{
+  "contas": [
+    {
+      "id": "1",
+      "razaoSocial": "teste",
+      "cnpj": "123456789",
+      "email": "teste@gmail.com",
+      "senha": "123"
+    },
+    {
+      "id": "2",
+      "razaoSocial": "teste2",
+      "cnpj": "1234567890",
+      "email": "teste2@gmail.com",
+      "senha": "1234"
+    }
+  ]
+}

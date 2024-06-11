@@ -10,57 +10,84 @@ loginBtn.addEventListener('click', () => {
     container.classList.remove("active");
 });
 
-/* --------------------------------- Validação ------------------------------- */
+/* --------------------  verificão da Conta (precisamos de ajuda) ---------------------- */
 
-/*  Validação Cadastrar  
-const formCadastrar = document.getElementById("formCadastrar");
-const razaoSocialCadastroInput = document.getElementById("razaoSocialCadastrar");
-const cnpjInput = document.getElementById("cnpj");
-const emailCadastroInput = document.getElementById("emailCadastro");
-const senhaCadastroInput = document.getElementById("senhaCadastro");
+document.addEventListener("DOMContentLoaded", function() {
+    const url = "http://localhost:3000/contas";
 
-/*  Validação entrar  
-const formEntrar = document.getElementById("formEntrar");
-const razaoSocialEntrarInput = document.getElementById("razaoSocialEntrar");
-const emailEntrarInput = document.getElementById("emailEntrar");
-const senhaEntrarInput = document.getElementById("senhaEntrar");
+    const formEntrar = document.getElementById("formEntrar");
+    const razaoSocialEntrarInput = document.getElementById("razaoSocialEntrar");
+    const senhaEntrarInput = document.getElementById("senhaEntrar");
 
-formCadastrar.addEventListener("submit",(event) => {
-    event.preventDefault();
+    formEntrar.addEventListener("submit", function(event) {
+        event.preventDefault();
 
-    if(razaoSocialCadastroInput.value === ""){
-        alert("Por favor, preencha o campo Razão Social.");
-        return;
-    }
-    if(cnpjInput.value === ""){
-        alert("Por favor, preencha o campo CNPJ.");
-        return;
-    }
-    if(emailCadastroInput.value === ""){
-        alert("Por favor, preencha o campo Email.");
-        return;
-    }
-    if(senhaCadastroInput.value === ""){
-        alert("Por favor, preencha o campo Senha para gerar o seu cadastro.");
-        return;
-    }
+        const razaoSocial = razaoSocialEntrarInput.value;
+        const senha = senhaEntrarInput.value;
+
+        fetch(url)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("Erro na resposta da rede");
+                }
+                return response.json();
+            })
+            .then(dados => {
+                const conta = dados.find(conta => 
+                    conta.razaoSocial === razaoSocial && conta.senha === senha
+                );
+
+                if (conta) {
+                    alert("Login realizado com sucesso!");
+                    window.location.href = "/Front/Home/home.html";
+                } else {
+                    alert("Razão Social ou Senha incorretos.");
+                }
+            })
+            .catch(error => {
+                console.error("Erro ao buscar os dados:", error);
+                alert("Erro ao buscar os dados. Verifique o console para mais detalhes.");
+            });
+    });
+
+    const container = document.getElementById('container');
+    const registerBtn = document.getElementById('register');
+    const loginBtn = document.getElementById('login');
+
+    registerBtn.addEventListener('click', () => {
+        container.classList.add("active");
+    });
+
+    loginBtn.addEventListener('click', () => {
+        container.classList.remove("active");
+    });
 });
 
-formEntrar.addEventListener("submit", (event) =>{
-    event.preventDefault();
-    
-    if(razaoSocialEntrarInput.value === ""){
-        alert("Por favor, preencha o campo Razão Social.");
-        return;
-    }
-    if(emailEntrarInput.value === ""){
-        alert("Por favor, preencha o campo Email.");
-        return;
-    }
-    if(senhaEntrarInput.value === ""){
-        alert("Por favor, preencha o campo Senha.");
-        return;
-    }
-});
+/* --------------------------  Nós mesmo criamos  ------------------------------- */
 
-*/
+function criarConta(){
+    const url = "http://localhost:3000/contas"
+
+    let razaoSocial = document.getElementById("razaoSocialCadastro").value
+    let cnpj = document.getElementById("cnpjCadastro").value
+    let email = document.getElementById("emailCadastro").value
+    let senha = document.getElementById("senhaCadastro").value
+
+    tipoConta = {
+        razaoSocial: razaoSocial,
+        cnpj: cnpj,
+        email: email,
+        senha: senha
+    }
+
+    fetch(url, {
+        method:"POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(tipoConta)
+    })
+    .then(response => response.json())
+    .then(data => alert("Cadastro realizado com sucesso!"))
+    .catch(err => console.log("Erro: ", err))
+}
