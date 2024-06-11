@@ -1,0 +1,72 @@
+@import url();
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Outfit", sans-serif;
+}
+
+body{
+        height: 900vh;
+}
+
+nav.Menu-lateral{
+    width:70px;
+    height: 100%;
+    background-color: #202020;
+    padding: 40px 0 40px 1%;
+    box-shadow: 3px 0 0 #0000FF;
+
+    position: fixed;
+    top: 0;
+    left: 0; 
+    overflow: hidden;
+    transition: .2s;
+}
+nav.Menu-lateral:hover{
+    width: 300px;
+}
+
+.btn-expandir{
+    width: 100%;
+    padding-left: 10px;
+}
+
+.btn-expandir > i{
+    color: #fff ;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+ul{
+    height: 100%;
+    list-style-type: none;
+}
+
+ul li.home-menu:hover{
+    background-color: blue;
+}
+
+ul li.home-menu{
+    transition: .2s;
+}
+
+ul li.home-menu a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 20px;
+    padding: 20px 4%;
+    display: flex;
+    margin-bottom: 10px;
+    line-height: 40px;
+}
+
+ul li.home-menu a .txt-link{
+     margin-left: 25px;
+}
+
+ul li.home-menu a .icon > i{
+    font-size: 30px;
+    margin-left: 10px;
+}
