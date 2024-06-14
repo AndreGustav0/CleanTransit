@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 );
 
                 if (conta) {
-                    window.location.href = "/Front/Home/home.html";
+                    window.location.href = `/Front/Home/home.html?${conta.id}`;
                 } else {
                     alert("Razão Social ou Senha incorretos.");
                 }
@@ -67,10 +67,10 @@ document.addEventListener("DOMContentLoaded", function() {
 function criarConta(){
     const url = "http://localhost:3000/contas"
 
-    let razaoSocial = document.getElementById("razaoSocialCadastro").value
-    let cnpj = document.getElementById("cnpjCadastro").value
-    let email = document.getElementById("emailCadastro").value
-    let senha = document.getElementById("senhaCadastro").value
+    let razaoSocial = document.getElementById("razaoSocialCadastro").value;
+    let cnpj = document.getElementById("cnpjCadastro").value;
+    let email = document.getElementById("emailCadastro").value;
+    let senha = document.getElementById("senhaCadastro").value;
 
     tipoConta = {
         razaoSocial: razaoSocial,
