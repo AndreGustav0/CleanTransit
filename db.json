@@ -1,18 +1,20 @@
 {
   "contas": [
     {
-      "id": "1",
-      "razaoSocial": "teste",
+      "id": "6566",
+      "razaoSocial": "teste 4",
       "cnpj": "123456789",
-      "email": "teste@gmail.com",
-      "senha": "123"
-    },
-    {
-      "id": "2",
-      "razaoSocial": "teste2",
-      "cnpj": "1234567890",
-      "email": "teste2@gmail.com",
-      "senha": "1234"
+      "email": "andre@gmail.com",
+      "senha": "123",
+      "veiculos": [
+        {
+          "placa": "",
+          "marca": "",
+          "modelo": "",
+          "ano": "",
+          "cor": ""
+        }
+      ]
     }
   ]
 }

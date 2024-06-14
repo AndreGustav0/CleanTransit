@@ -38,7 +38,6 @@ document.addEventListener("DOMContentLoaded", function() {
                 );
 
                 if (conta) {
-                    alert("Login realizado com sucesso!");
                     window.location.href = "/Front/Home/home.html";
                 } else {
                     alert("Razão Social ou Senha incorretos.");
@@ -77,7 +76,16 @@ function criarConta(){
         razaoSocial: razaoSocial,
         cnpj: cnpj,
         email: email,
-        senha: senha
+        senha: senha,
+        veiculos: [
+            {
+                placa: "",
+                marca: "",
+                modelo: "",
+                ano: "",
+                cor: ""
+            }
+        ]
     }
 
     fetch(url, {
