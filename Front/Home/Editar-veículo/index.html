@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./index.css">
+    <title>Editar Veículo</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Editar Veículo</h1>
+        <form action="/update_vehicle" method="POST">
+            
+            <label for="placa">Placa para Identifição:</label>
+            <input type="text" id="placaIdent" name="placaIdent" required>
+            
+            <label for="marca">Marca:</label>
+            <input type="text" id="marca" name="marca" required>
+            
+            <label for="modelo">Modelo:</label>
+            <input type="text" id="modelo" name="modelo" required>
+            
+            <label for="placa">Placa:</label>
+            <input type="text" id="placa" name="placa" required>
+            
+            <label for="cor">Cor:</label>
+            <input type="text" id="cor" name="cor" required>
+            
+            <label for="ano">Ano:</label>
+            <input type="number" id="ano" name="ano" required>
+            
+            <button type="submit" onclick="editVeiculo()">Salvar Alterações</button>
+        </form>
+    </div>
+
+    <script src="/Front/Editar veículo/index.js"></script>
+</body>
+</html>
