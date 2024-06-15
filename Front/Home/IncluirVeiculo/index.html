@@ -9,7 +9,7 @@
 <body>
     <div class="container">
         <h1>Adicionar Veículo</h1>
-        <form action="/submit_vehicle" method="POST">
+        <form id="formIncluirVeiculo" onsubmit="addVeiculo(event);">
             <label for="marca">Marca:</label>
             <input type="text" id="marcaCad" name="marca" required>
             
@@ -25,10 +25,10 @@
             <label for="ano">Ano:</label>
             <input type="text" id="anoCad" name="ano" required>
             
-            <button type="submit" onclick="addVeiculo()">Adicionar</button>
+            <button type="submit">Adicionar</button>
         </form>
     </div>
 
-    <script src="/Front/Incluir veículo/index.js"></script>
+    <script src="./index.js"></script>
 </body>
 </html>

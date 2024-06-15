@@ -38,9 +38,13 @@ document.addEventListener("DOMContentLoaded", function() {
                 );
 
                 if (conta) {
-                    window.location.href = `/Front/Home/home.html?${conta.id}`;
+                    sessionStorage.setItem("novoUrl", conta.id)
+
+                    console.log(sessionStorage.getItem("novoUrl"))
+                    window.location = `http://127.0.0.1:3000/Front/Home/home.html?id=${conta.id}`
+                    
                 } else {
-                    alert("Razão Social ou Senha incorretos.");
+                    alert("Razão Social ou Senha incorretos.")
                 }
             })
             .catch(error => {
@@ -61,6 +65,7 @@ document.addEventListener("DOMContentLoaded", function() {
         container.classList.remove("active");
     });
 });
+
 
 /* --------------------------  Nós mesmo criamos  ------------------------------- */
 
