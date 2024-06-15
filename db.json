@@ -1,36 +1,12 @@
 {
   "contas": [
     {
-      "id": "e8f4",
-      "razaoSocial": "teste 7",
-      "cnpj": "1234567890",
+      "id": "bf8a",
+      "razaoSocial": "teste 9",
+      "cnpj": "987654321",
       "email": "andre@gmail.com",
       "senha": "123",
-      "veiculos": [
-        {
-          "placa": "",
-          "marca": "",
-          "modelo": "",
-          "ano": "",
-          "cor": ""
-        }
-      ]
-    },
-    {
-      "id": "0a00",
-      "razaoSocial": "Teste 8",
-      "cnpj": "123456789",
-      "email": "andre@gmail.com",
-      "senha": "123",
-      "veiculos": [
-        {
-          "placa": "",
-          "marca": "",
-          "modelo": "",
-          "ano": "",
-          "cor": ""
-        }
-      ]
+      "veiculos": []
     }
   ]
 }

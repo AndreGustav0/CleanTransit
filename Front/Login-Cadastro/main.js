@@ -82,15 +82,7 @@ function criarConta(){
         cnpj: cnpj,
         email: email,
         senha: senha,
-        veiculos: [
-            {
-                placa: "",
-                marca: "",
-                modelo: "",
-                ano: "",
-                cor: ""
-            }
-        ]
+        veiculos: []
     }
 
     fetch(url, {

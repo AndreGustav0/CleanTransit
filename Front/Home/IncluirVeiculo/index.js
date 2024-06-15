@@ -1,6 +1,5 @@
 const url = "http://localhost:3000/contas"
 const id = new URLSearchParams(window.location.search) // para pegar o id da conta 
-const userId = params.get('id');
 
 function addVeiculo(event) {
     event.preventDefault();
@@ -19,15 +18,26 @@ function addVeiculo(event) {
         ano: anoCad
     };
 
-    fetch(`${url}${userId}`, {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify(novoVeiculo)
+    fetch(`${url}/${id.get("id")}`, {
+            method: "PUT", // ou "PUT", dependendo da sua implementação no JSON Server
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({ veiculos: contas.veiculos })
     })
-    .then(response => response.json())
-    .then(data => alert("Veículo cadastrado com Sucesso!"))
-    .catch(err => alert("Erro! Veículo não foi cadastrado."))
-
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Erro ao atualizar a conta');
+        }
+        return response.json();
+    })
+    .then(data => {
+        alert("Veículo cadastrado com sucesso!");
+    })
+    .catch(err => {
+        console.error("Erro ao cadastrar veículo:", err);
+        alert("Erro! Veículo não foi cadastrado.");
+    });
 }
+
+//  fazer um get da conta -> criar o veículo -> adicionar na conta -> fazer o put
