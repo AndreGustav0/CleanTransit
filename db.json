@@ -6,7 +6,15 @@
       "cnpj": "987654321",
       "email": "andre@gmail.com",
       "senha": "123",
-      "veiculos": []
+      "veiculos": [
+        {
+          "modelo": "R 450",
+          "ano": "2022",
+          "placa": "AVG-4123",
+          "cor": "Cinza",
+          "marca": "Scania"
+        }
+      ]
     }
   ]
 }

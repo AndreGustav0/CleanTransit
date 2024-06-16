@@ -1,43 +1,52 @@
-const url = "http://localhost:3000/contas"
-const id = new URLSearchParams(window.location.search) // para pegar o id da conta 
+const url = "http://localhost:3000/contas";
+const idConta = new URLSearchParams(window.location.search).get('id'); // para pegar o id da conta a partir da URL
 
-function addVeiculo(event) {
-    event.preventDefault();
+// Função para adicionar um novo veículo a uma conta específica
+async function adicionarVeiculo(idConta, novoVeiculo) {
+    try {
+        // Primeiro, pegue a conta pelo ID
+        let response = await fetch(`${url}/${idConta}`);
+        let conta = await response.json();
 
-    let marcaCad = document.getElementById("marcaCad").value;
-    let modeloCad = document.getElementById("modeloCad").value;
-    let placaCad = document.getElementById("placaCad").value;
-    let corCad = document.getElementById("corCad").value;
-    let anoCad = document.getElementById("anoCad").value;
+        if (conta) {
+            // Adicionar o novo veículo ao array "veiculos" da conta
+            conta.veiculos.push(novoVeiculo);
 
-    const novoVeiculo = {
-        marca: marcaCad,
-        modelo: modeloCad,
-        placa: placaCad,
-        cor: corCad,
-        ano: anoCad
-    };
+            // Atualizar a conta no servidor
+            response = await fetch(`${url}/${idConta}`, {
+                method: 'PATCH',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ veiculos: conta.veiculos })
+            });
 
-    fetch(`${url}/${id.get("id")}`, {
-            method: "PUT", // ou "PUT", dependendo da sua implementação no JSON Server
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({ veiculos: contas.veiculos })
-    })
-    .then(response => {
-        if (!response.ok) {
-            throw new Error('Erro ao atualizar a conta');
+            if (response.ok) {
+                alert("Veículo cadastrado com sucesso!")
+            } else {
+                alert("Erro ao cadastrar!")
+            }
+        } else {
+            alert("Conta não encontrada!")
         }
-        return response.json();
-    })
-    .then(data => {
-        alert("Veículo cadastrado com sucesso!");
-    })
-    .catch(err => {
-        console.error("Erro ao cadastrar veículo:", err);
-        alert("Erro! Veículo não foi cadastrado.");
-    });
+    } catch (error) {
+        alert("Erro ao adicionar veículo:", error);
+    }
 }
 
-//  fazer um get da conta -> criar o veículo -> adicionar na conta -> fazer o put
+// Função para tratar a submissão do formulário
+function addVeiculo(event) {
+    event.preventDefault(); // Impede o comportamento padrão de submissão do formulário
+
+    // Capturar os dados do formulário
+    let novoVeiculo = {
+        modelo: document.getElementById('modeloCad').value,
+        ano: document.getElementById('anoCad').value,
+        placa: document.getElementById('placaCad').value,
+        cor: document.getElementById('corCad').value,
+        marca: document.getElementById('marcaCad').value
+    };
+
+    // Adicionar o novo veículo à conta com o ID especificado
+    adicionarVeiculo(idConta, novoVeiculo);
+}
