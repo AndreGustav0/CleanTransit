@@ -10,7 +10,30 @@
         {
           "modelo": "R 450",
           "ano": "2022",
-          "placa": "XYZ-9876",
+          "placa": "AAA-1111",
+          "cor": "Cinza",
+          "marca": "Scania"
+        },
+        {
+          "modelo": "R 450",
+          "ano": "2022",
+          "placa": "BBB-2222",
+          "cor": "Cinza",
+          "marca": "Scania"
+        }
+      ]
+    },
+    {
+      "id": "09d5",
+      "razaoSocial": "teste 10",
+      "cnpj": "18112005",
+      "email": "andre@gmail.com",
+      "senha": "123",
+      "veiculos": [
+        {
+          "modelo": "R 450",
+          "ano": "2023",
+          "placa": "CCC-3333",
           "cor": "Cinza",
           "marca": "Scania"
         }

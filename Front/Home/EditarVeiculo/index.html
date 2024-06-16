@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
@@ -9,30 +8,26 @@
 <body>
     <div class="container">
         <h1>Editar Veículo</h1>
-        <form action="/update_vehicle" method="POST">
+        <form id="formEditarVeiculo" onsubmit="editVeiculo(event)">
+            <label for="placaEdit">Placa do Veículo:</label>
+            <input type="text" id="placaEdit" name="placaEdit" required>
             
-            <label for="placa">Placa para Identifição:</label>
-            <input type="text" id="placaIdent" name="placaIdent" required>
+            <label for="marcaEdit">Marca:</label>
+            <input type="text" id="marcaEdit" name="marcaEdit" required>
             
-            <label for="marca">Marca:</label>
-            <input type="text" id="marca" name="marca" required>
+            <label for="modeloEdit">Modelo:</label>
+            <input type="text" id="modeloEdit" name="modeloEdit" required>
             
-            <label for="modelo">Modelo:</label>
-            <input type="text" id="modelo" name="modelo" required>
+            <label for="corEdit">Cor:</label>
+            <input type="text" id="corEdit" name="corEdit" required>
             
-            <label for="placa">Placa:</label>
-            <input type="text" id="placa" name="placa" required>
+            <label for="anoEdit">Ano:</label>
+            <input type="text" id="anoEdit" name="anoEdit" required>
             
-            <label for="cor">Cor:</label>
-            <input type="text" id="cor" name="cor" required>
-            
-            <label for="ano">Ano:</label>
-            <input type="number" id="ano" name="ano" required>
-            
-            <button type="submit" onclick="editVeiculo()">Salvar Alterações</button>
+            <button type="submit">Editar</button>
         </form>
     </div>
 
-    <script src="/Front/EditarVeiculo/index.js"></script>
+    <script src="./index.js"></script>
 </body>
 </html>
