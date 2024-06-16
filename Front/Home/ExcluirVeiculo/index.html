@@ -7,67 +7,18 @@
     <title>Excluir Veículo</title>
 </head>
 <body>
+
     <div class="container">
         <h1>Excluir Veículo</h1>
-        <form action="/delete_vehicle" method="POST">
+        <form id="formExcluirVeiculo" onsubmit="removeVeiculo(event)">
             <label for="placa">Placa:</label>
-            <input type="text" id="placa" name="placa" required>
+            <input type="text" id="placaRemover" name="placaRemover" required>
             
-            <button type="submit" onclick="deleteVeiculo()">Excluir</button>
+            <button type="submit">Excluir</button>
         </form>
     </div>
     
-    <nav class="Menu-lateral">
-        <div class="btn-expandir">
-            <i class="bi bi-list"></i>
-        </div>
-
-        <ul>
-            <li class="home-menu">
-                <a href="#">
-                    <span class="icon"><i class="bi bi-house"></i></span>
-                    <span class="txt-link">Área home</span>
-                </a>
-            </li>
-            
-            <li class="home-menu">
-                <a href="#">
-                    <span class="icon"><i class="bi bi-person"></i></span>
-                    <span class="txt-link">Cadastro cliente</span>
-                </a>
-            </li>
-            
-            <li class="home-menu">
-                <a href="./Incluir veículo/index.html">
-                    <span class="icon"><i class="bi bi-truck"></i></span>
-                    <span class="txt-link" >Incluir Veículo</span>
-                </a>
-            </li>
-            
-            <li class="home-menu">
-                <a href="./Consultar-frota/index.html">
-                    <span class="icon"><i class="bi bi-search"></i></span>
-                    <span class="txt-link">Consultar Frota</span>
-                </a>
-            </li>
-            
-            <li class="home-menu">
-                <a href="./Editar-veículo/index.html">
-                    <span class="icon"><i class="bi bi-pencil"></i></span>
-                    <span class="txt-link">Editar Veículo</span>
-                </a>
-            </li>
-            
-            <li class="home-menu">
-                <a href="Excluir-veículo/index.html">
-                    <span class="icon"><i class="bi bi-trash"></i></span>
-                    <span class="txt-link">Excluir Veículo</span>
-                </a>
-            </li>
-        </ul>
-    </nav>
-
-    <script src="/Front/Excluirveiculo/index.js"></script>
+    <script src="./index.js"></script>
 
 </body>
 </html>
