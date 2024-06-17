@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     sessionStorage.setItem("novoUrl", conta.id)
 
                     console.log(sessionStorage.getItem("novoUrl"))
-                    window.location = `http://127.0.0.1:3000/Front/Home/home.html?id=${conta.id}`
+                    window.location = `Home/home.html?id=${conta.id}`
                     
                 } else {
                     alert("Razão Social ou Senha incorretos.")

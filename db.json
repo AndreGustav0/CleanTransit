@@ -1,12 +1,28 @@
 {
   "contas": [
     {
-      "id": "d32f",
-      "razaoSocial": "teste 20",
+      "id": "b4dc",
+      "razaoSocial": "teste 23",
       "cnpj": "18112005",
       "email": "andre@gmail.com",
       "senha": "123",
       "veiculos": []
+    },
+    {
+      "id": "e60e",
+      "razaoSocial": "teste 24",
+      "cnpj": "1234567890",
+      "email": "andre@gmail.com",
+      "senha": "123",
+      "veiculos": [
+        {
+          "modelo": "R 500",
+          "ano": "2020",
+          "placa": "AND-1234",
+          "cor": "Preto",
+          "marca": "Scania"
+        }
+      ]
     }
   ]
 }
