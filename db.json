@@ -1,5 +1,12 @@
 {
   "contas": [
-  
+    {
+      "id": "d32f",
+      "razaoSocial": "teste 20",
+      "cnpj": "18112005",
+      "email": "andre@gmail.com",
+      "senha": "123",
+      "veiculos": []
+    }
   ]
 }
