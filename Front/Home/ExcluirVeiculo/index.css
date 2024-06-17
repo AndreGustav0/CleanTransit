@@ -1,0 +1,165 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+
+.container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+}
+
+
+h1 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+
+label {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 8px;
+    text-align: left;
+}
+
+
+input[type="text"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    font-size: 16px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+
+button {
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: #ff6666;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #ff4c4c;
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 15px;
+        width: 90%;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    input[type="text"] {
+        font-size: 14px;
+    }
+
+    button {
+        font-size: 14px;
+    }
+}
+
+
+
+@import url();
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: "Outfit", sans-serif;
+}
+
+body{
+    height: 100vh;
+}
+
+nav.Menu-lateral{
+    width:70px;
+    height: 100%;
+    background-color: #202020;
+    padding: 40px 0 40px 1%;
+    box-shadow: 3px 0 0 #0000FF;
+
+    position: fixed;
+    top: 0;
+    left: 0; 
+    overflow: hidden;
+    transition: .2s;
+}
+nav.Menu-lateral:hover{
+    width: 300px;
+}
+
+.btn-expandir{
+    padding-left: 20px;
+    margin-bottom: 5vh;
+}
+
+.btn-expandir > i{
+    color: #fff ;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+ul{
+    height: 100%;
+    list-style-type: none;
+}
+
+ul li.home-menu:hover{
+    background-color: blue;
+}
+
+ul li.home-menu{
+    transition: .2s;
+}
+
+ul li.home-menu a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 20px;
+    padding: 20px 4%;
+    display: flex;
+    margin-bottom: 10px;
+    line-height: 40px;
+    margin: 0px;
+
+}
+
+ul li.home-menu a .txt-link{
+     margin-left: 25px;
+}
+
+ul li.home-menu a .icon > i{
+    font-size: 30px;
+    margin-left: 10px;
+}
